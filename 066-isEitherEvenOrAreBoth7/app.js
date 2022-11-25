@@ -1,5 +1,5 @@
 function isEitherEvenOrAreBoth7(num1, num2) {
-    if (espar(num1) || espar(num2)) {
+    if ((espar(num1) || espar(num2)) || (num1 === 7 && num2 === 7)) {
         return true;
     }
 

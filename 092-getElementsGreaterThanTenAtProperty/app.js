@@ -1,9 +1,7 @@
 function getElementsGreaterThan10AtProperty(objeto, key) {
-    return objeto[key].map(function(value, index) {
-        if (value > 10) {
-            return value;
-        }
-    });
+    if (typeof(objeto[key]) === "undefined" || !Array.isArray(objeto[key])) { return []; }
+
+    return objeto[key].filter(value => value > 10);
 }
 
 var obj = {

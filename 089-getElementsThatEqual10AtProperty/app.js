@@ -1,5 +1,7 @@
-function getElementsThatEqual10AtProperty(objecto, key) {
-    return objecto[key].filter(value => value = 10);
+function getElementsThatEqual10AtProperty(objeto, key) {
+    if (typeof(objeto[key]) === "undefined" || !Array.isArray(objeto[key])) { return []; }
+
+    return objeto[key].filter(value => value === 10);
 }
 
 var obj = {

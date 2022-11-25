@@ -1,7 +1,7 @@
-function getOddLengthWordsAtProperty(objeto, key) {
-    return objeto[key].map(function(value, index) {
-        if (value.length % 2 != 0) { return value; }
-    });
+const getOddLengthWordsAtProperty = (object, key) => {
+    if (typeof(object[key]) === "undefined" || !Array.isArray(object[key])) { return []; }
+
+    return object[key].filter(value => value.length % 2 != 0);
 }
 
 var obj = {

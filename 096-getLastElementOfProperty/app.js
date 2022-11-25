@@ -1,6 +1,7 @@
 const getLastElementOfProperty = (objeto, key) => {
-    let o = objeto[key];
-    return o[o.length -1];
+    if (typeof(objeto[key]) === "undefined" || objeto[key].length === 0 || !Array.isArray(objeto[key])) { return undefined; }
+    
+    return objeto[key][objeto[key].length -1];
 }
 
 var obj = {

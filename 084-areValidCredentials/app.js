@@ -1,5 +1,8 @@
-function areValidCredentials(one, two) {
-    if (one.length > 3 && two >= 8) { return true; }
+function areValidCredentials(name, password) {
+    if (name.length > 3 && password.length >= 8) {
+        return true;
+    }
+    
     return false;
 }
 

@@ -1,12 +1,12 @@
-const getElementsLessThan100AtProperty = (objeto, key) => {
-    return objeto[key].filter(function(value, index) {
-        return value < 100;
-    });
+function getElementsLessThan100AtProperty(objeto, key) {
+    if (typeof(objeto[key]) === "undefined" || !Array.isArray(objeto[key])) { return []; }
+
+    return objeto[key].filter(value => value < 100);
 }
 
 var obj = {
-    key: [1000, 20, 50, 500]
+    key: [1000, 10, 50, 10]
 };
 
 var output = getElementsLessThan100AtProperty(obj, 'key');
-console.log(output); // --> [20, 50]
+console.log(output); // --> [10, 10]

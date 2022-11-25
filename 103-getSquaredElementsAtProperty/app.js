@@ -3,7 +3,7 @@ var obj = {
 };
 
 function getSquaredElementsAtProperty(obj, key) {
-  if (typeof obj[key] == "undefined" || typeof obj[key] != "object" || obj[key].length == 0) {
+  if (typeof obj[key] == "undefined" || typeof obj[key] != "object" || obj[key].length == 0 || !Array.isArray(obj[key])) {
      return [];
   }
 

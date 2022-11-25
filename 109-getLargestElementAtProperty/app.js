@@ -1,12 +1,12 @@
 var obj = {
-  key: [1, 2, 4]
+  key: [5, 4, 15]
 };
 function getLargestElementAtProperty(obj, key) {
-  if (typeof obj[key] != "undefined" && typeof obj[key] == "object" && obj[key].length != 0) {
-    return obj[key].sort().pop();
+  if (typeof obj[key] == "undefined" || typeof obj[key] != "object" || obj[key].length == 0 || !Array.isArray(obj[key])) {
+    return [];
   }
-  
-  return [];
+
+  return Math.max(...obj[key]);
 }
 var output = getLargestElementAtProperty(obj, 'key');
 console.log(output); // --> 4

@@ -1,11 +1,9 @@
 function getOddElementsAtProperty(obj, key) {
-  if (typeof obj[key] == "undefined" || typeof obj[key] != "object" || obj[key].length == 0) {
+  if (typeof obj[key] == "undefined" || typeof obj[key] != "object" || obj[key].length == 0 || !Array.isArray(obj[key])) {
     return [];
  }
 
- return obj[key].filter(function(value, index) {
-  return value % 2 != 0;
- });
+ return obj[key].filter(value => value % 2 != 0);
 }
 
 var obj = {

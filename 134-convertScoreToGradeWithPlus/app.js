@@ -1,25 +1,31 @@
 function convertScoreToGradeWithPlusAndMinus(score) {
-    if (score <= 100 && score >= 90) {
-        return 'A';
-    }
-    else if (score <= 89 && score >= 80) {
-        return 'B';
-    }
-    else if (score <= 79 && score >= 70) {
-        return 'C';
-    }
-    else if (score <= 69 && score >= 60) {
-        return 'D';
-    }
-    else if (score <= 59 && score >= 0) {
-        if (score <= 2 && score >= 0) { return "F-"; }
-        if (score <= 9 && score >= 8) { return "F+"; }
-        return 'F';
-    }
-    else {
-        return "INVALID SCORE";
+    // your code here
+    if (score > 100 || score < 0) {
+        return 'INVALID SCORE';
+    } else {
+        if (score <= 100 && score >= 93) {
+            return 'A+';
+        } else if (score <= 92 && score >= 90) {
+            return 'A-'
+        } else if (score <= 89 && score >= 80) {
+            return 'B';
+        } else if (score <= 89 && score >= 83) {
+            return 'B+'
+        } else if (score <= 82 && score >= 80) {
+            return 'B-'
+        } else if (score <= 79 && score >= 73) {
+            return 'C+'
+        } else if (score <= 72 && score >= 70) {
+            return 'C-'
+        } else if (score <= 69 && score >= 63) {
+            return 'D+'
+        } else if (score <= 62 && score >= 60) {
+            return 'D-'
+        } else if (score <= 59) {
+            return 'F'
+        }
     }
 }
 
-var output = convertScoreToGradeWithPlusAndMinus(91);
+var output = convertScoreToGradeWithPlusAndMinus(82);
 console.log(output); // --> 'A-'

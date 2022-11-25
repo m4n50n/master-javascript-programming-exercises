@@ -1,8 +1,7 @@
-function getFirstElementOfProperty(objeto, key) {
-    //return objeto[key][0];
+function getFirstElementOfProperty(objeto, key) {    
+    if (typeof(objeto[key]) === "undefined" || objeto[key].length === 0 || !Array.isArray(objeto[key])) { return undefined; }
     return objeto[key].shift();
 }
-
 
 var obj = {
     key: [1, 2, 4]

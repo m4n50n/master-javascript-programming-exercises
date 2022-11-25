@@ -1,7 +1,9 @@
-function isRotated(str1, str2) {		
-	console.log(str2.repeat(2));
-	
-	return str1.length === str2.length && str2.repeat(2).includes(str1);
+function isRotated(str1, str2) {
+    let fracc = str1.split('');
+    let aux = [];
+    for (let i of fracc) aux.push(str2.indexOf(i));
+    let result = !aux.includes(-1);
+    return result;
 }
 
 console.log(isRotated('hello world', 'orldhello w')) // => true

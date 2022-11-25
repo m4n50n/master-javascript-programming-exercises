@@ -1,4 +1,6 @@
 function getAverageOfElementsAtProperty(obj, key) {
+  if (typeof(obj[key]) === "undefined" || obj[key].length === 0 || !Array.isArray(obj[key])) { return 0; }
+
   let sum = 0;
   let total = 0;
   let tok = typeof obj[key];

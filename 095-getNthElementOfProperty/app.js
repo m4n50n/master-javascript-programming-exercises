@@ -1,4 +1,6 @@
 const getNthElementOfProperty = (objeto, key, elemento) => {
+    if (typeof(objeto[key]) === "undefined" || objeto[key].length === 0 || !Array.isArray(objeto[key])) { return undefined; }
+    
     return objeto[key][elemento];
 }
 

@@ -1,9 +1,12 @@
-function average(num1, num2) {
-  return sum(num1, num2) / 2;
+function average(array_of_numbers) {
+  // process array of numbers
+  return (sum(array_of_numbers)/array_of_numbers.length);
 }
 
-function sum(num1, num2) {
-    return num1 + num2;
+function sum(numbers) {
+    let result = 0;
+    for (let number of numbers){
+      result = result + number;
+    }
+    return result;
 }
-
-console.log(average(1, 2));
